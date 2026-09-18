@@ -6,54 +6,223 @@
     <title>De Raiz — build control</title>
     <meta
       name="description"
-      content="A personal app for people building their own house in Portugal: quotes, payments, phases and documents, with no accounts and no server."
+      content="A personal app for people building their own house in Portugal: quotes, payments, phases and documents. Offline, with no accounts and no server."
     />
+    <link rel="icon" href="../favicon.png" />
     <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
-    <main>
-      <header>
-        <h1>De Raiz</h1>
-        <p class="lead">Build control for people managing their own house.</p>
-        <a class="lang" href="../">Ler em português</a>
-      </header>
-
-      <p>
-        A personal app for someone building their own house in Portugal and hiring the trades
-        directly, with no general contractor. It answers four questions that come up every day:
-      </p>
-
-      <ul>
-        <li>What will this cost in total, and am I within budget?</li>
-        <li>What have I paid each supplier, and what is left?</li>
-        <li>Which phase am I in, and what must be handled before the next one?</li>
-        <li>Where is the contract, the invoice or the photo of that?</li>
-      </ul>
-
-      <div class="callout">
-        <p>
-          <strong>It collects no data at all.</strong> No accounts, no server, and it works offline
-          — everything you enter stays on your device.
-          <a href="../privacy/">The privacy policy</a> spells it out.
-        </p>
+    <header class="site-header">
+      <div class="inner">
+        <a class="brand" href="./">
+          <svg viewBox="0 0 128 128" fill="none" stroke="currentColor" aria-hidden="true">
+            <path
+              d="M25 104V57L64 24l39 33v47"
+              stroke-width="13"
+              stroke-linejoin="miter"
+              stroke-linecap="butt"
+            />
+            <path d="M89 45V25" stroke-width="12" stroke-linecap="butt" />
+            <g stroke-width="3" stroke-linecap="round">
+              <path d="M64 55c0 21 0 36 0 51" />
+              <path d="M64 72c-3 12-7 21-14 34" />
+              <path d="M64 72c3 12 7 21 14 34" />
+              <path d="M64 78c-7 10-17 18-30 26" />
+              <path d="M64 78c7 10 17 18 30 26" />
+              <path d="M64 84c-10 6-26 11-48 15" />
+              <path d="M64 84c10 6 26 11 48 15" />
+            </g>
+          </svg>
+          De Raiz
+        </a>
+        <nav class="site-nav">
+          <a class="hide-sm" href="#what-it-does">What it does</a>
+          <a href="../privacy/">Privacy</a>
+          <a href="../support/">Support</a>
+          <a class="lang" href="../">PT</a>
+        </nav>
       </div>
+    </header>
 
-      <h2>Where to go next</h2>
-      <ul>
-        <li><a href="../privacy/">Privacy policy</a> — what is kept where, and why.</li>
-        <li><a href="../support/">Support</a> — questions, bugs, and the things most asked.</li>
-      </ul>
+    <main>
+      <section class="hero">
+        <div class="inner">
+          <span class="eyebrow">In testing · App Store next</span>
+          <h1>Your build, to the cent.</h1>
+          <p>
+            You are building your own house and hiring the trades directly, with no general
+            contractor. De Raiz keeps what that costs, what you have already paid, and what to
+            handle next — on your phone, offline, with no account.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#what-it-does">What it does</a>
+            <a class="btn btn-ghost" href="../privacy/">How it treats your data</a>
+          </div>
+        </div>
 
-      <p class="meta">
-        The app is in testing. The App Store is the next step, and this page will follow it.
-      </p>
+        <div class="device-wrap">
+          <div class="device">
+            <div class="screen">
+              <div class="notch"></div>
+              <p class="screen-title">Resumo</p>
+              <p class="screen-sub">Moradia em Vale do Sol</p>
 
-      <footer>
-        <p>
-          Contact: <a href="mailto:suporte@casaderaiz.pt">suporte@casaderaiz.pt</a> · A personal app
-          with no data-collecting commercial purpose.
+              <div class="money-card">
+                <span class="money-label">Previsão total</span>
+                <div class="money-figure">91 100 €</div>
+                <span class="money-of">de 185 000 € de orçamento</span>
+                <div class="bar" aria-hidden="true">
+                  <span style="width: 16.6%"></span>
+                  <span style="width: 24.5%"></span>
+                  <span style="width: 8.1%"></span>
+                </div>
+                <ul class="legend">
+                  <li><span>Pago</span> <b>30 750 €</b></li>
+                  <li><span>Contratado</span> <b>76 100 €</b></li>
+                  <li><span>Estimado</span> <b>15 000 €</b></li>
+                  <li><span>Folga</span> <b>93 900 €</b></li>
+                </ul>
+              </div>
+
+              <div class="screen-row">
+                <span>Fase atual</span>
+                <b>Estrutura · 3 de 12</b>
+              </div>
+              <div class="screen-row">
+                <span>Terreno</span>
+                <b>67 571 €</b>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="four-questions" style="padding-top: 8rem">
+        <h2>Four questions, at any moment</h2>
+        <p class="section-lead">
+          These are the questions that come up every week on your own build. The app exists to
+          answer them without opening a spreadsheet.
         </p>
-      </footer>
+        <div class="grid cols-4">
+          <article class="card">
+            <span class="q">01</span>
+            <h3>What will it cost in total?</h3>
+            <p>
+              Budget, contingency and forecast side by side — with contracted work kept separate
+              from what is still an estimate.
+            </p>
+          </article>
+          <article class="card">
+            <span class="q">02</span>
+            <h3>What have I paid each one?</h3>
+            <p>
+              Paid-to-date and outstanding, always derived from the payments you recorded. Never a
+              figure typed by hand.
+            </p>
+          </article>
+          <article class="card">
+            <span class="q">03</span>
+            <h3>Which phase am I in?</h3>
+            <p>
+              The phases of the build with checklists of what usually gets forgotten, from the site
+              log book to the energy certificate.
+            </p>
+          </article>
+          <article class="card">
+            <span class="q">04</span>
+            <h3>Where is that document?</h3>
+            <p>
+              Contracts, invoices and photos attached to the supplier, trade or material they belong
+              to.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="what-it-does">
+        <h2>What it does</h2>
+        <p class="section-lead">
+          A personal tool for one build. Not a contractor platform, no multiple users, and no
+          connection to your bank.
+        </p>
+        <div class="grid">
+          <article class="card">
+            <h3>Quotes and awarding</h3>
+            <p>
+              Collect three quotes per trade, compare them on one screen, and award one. The
+              contracted amount becomes the figure that counts.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Payment plans</h3>
+            <p>
+              Split a contract into tranches — 30/40/30 — that reconcile to the cent against the
+              awarded total, with no rounding left over.
+            </p>
+          </article>
+          <article class="card">
+            <h3>VAT the way you typed it</h3>
+            <p>
+              Enter net or gross, whichever the invoice shows, and it reads back the same way. The
+              list of legal rates is there to choose from.
+            </p>
+          </article>
+          <article class="card">
+            <h3>The plot, kept separate</h3>
+            <p>
+              Buying the land has its own total — price, transfer tax, stamp duty, deed, registry —
+              outside the build budget, because they are different kinds of number.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Diary and documents</h3>
+            <p>
+              What happened on each day, with photos. And every contract or invoice kept where it
+              makes sense to look for it later.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Export and keep</h3>
+            <p>
+              A complete backup in a single file, and CSV and PDF export for when someone needs to
+              see the numbers.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="banner">
+        <h2>It collects no data at all</h2>
+        <p>
+          No accounts, no server, no advertising and no usage analytics. It works entirely offline:
+          everything you enter stays on your device, and whoever made the app has no way of seeing
+          it.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="../privacy/">Privacy policy</a>
+          <a class="btn btn-ghost" href="../support/">Support</a>
+        </div>
+      </section>
+
+      <section class="section tight">
+        <p class="meta">
+          The app provides no tax, legal or engineering advice. Phases and deadlines vary between
+          municipalities: always confirm with your local council and the professionals involved. The
+          figures on the screen above are from a fictional build.
+        </p>
+      </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="inner">
+        <span>De Raiz · a personal app with no data-collecting commercial purpose.</span>
+        <nav>
+          <a href="../privacy/">Privacy</a>
+          <a href="../support/">Support</a>
+          <a href="mailto:suporte@casaderaiz.pt">suporte@casaderaiz.pt</a>
+          <a href="../">Português</a>
+        </nav>
+      </div>
+    </footer>
   </body>
 </html>

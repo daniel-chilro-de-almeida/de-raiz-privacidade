@@ -6,55 +6,223 @@
     <title>De Raiz — controlo de obra</title>
     <meta
       name="description"
-      content="Aplicação pessoal para quem constrói a sua própria casa em Portugal: orçamentos, pagamentos, fases e documentos, sem contas e sem servidor."
+      content="Aplicação pessoal para quem constrói a sua própria casa em Portugal: orçamentos, pagamentos, fases e documentos. Offline, sem contas e sem servidor."
     />
+    <link rel="icon" href="favicon.png" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main>
-      <header>
-        <h1>De Raiz</h1>
-        <p class="lead">Controlo de obra para quem constrói a sua própria casa.</p>
-        <a class="lang" href="en/">Read in English</a>
-      </header>
-
-      <p>
-        Uma aplicação pessoal para quem está a construir a sua moradia e contrata as especialidades
-        diretamente, sem empreiteiro geral. Responde a quatro perguntas que aparecem todos os dias:
-      </p>
-
-      <ul>
-        <li>Quanto é que isto vai custar no total, e estou dentro do orçamento?</li>
-        <li>Quanto já paguei e quanto falta pagar a cada fornecedor?</li>
-        <li>Em que fase estou e o que falta tratar antes da próxima?</li>
-        <li>Onde está o contrato, a fatura ou a fotografia daquilo?</li>
-      </ul>
-
-      <div class="callout">
-        <p>
-          <strong>Não recolhe dados nenhuns.</strong> Não tem contas, não tem servidor e funciona
-          sem internet — tudo o que escreve fica no seu dispositivo.
-          <a href="privacidade/">A política de privacidade</a> explica-o por extenso.
-        </p>
+    <header class="site-header">
+      <div class="inner">
+        <a class="brand" href="./">
+          <svg viewBox="0 0 128 128" fill="none" stroke="currentColor" aria-hidden="true">
+            <path
+              d="M25 104V57L64 24l39 33v47"
+              stroke-width="13"
+              stroke-linejoin="miter"
+              stroke-linecap="butt"
+            />
+            <path d="M89 45V25" stroke-width="12" stroke-linecap="butt" />
+            <g stroke-width="3" stroke-linecap="round">
+              <path d="M64 55c0 21 0 36 0 51" />
+              <path d="M64 72c-3 12-7 21-14 34" />
+              <path d="M64 72c3 12 7 21 14 34" />
+              <path d="M64 78c-7 10-17 18-30 26" />
+              <path d="M64 78c7 10 17 18 30 26" />
+              <path d="M64 84c-10 6-26 11-48 15" />
+              <path d="M64 84c10 6 26 11 48 15" />
+            </g>
+          </svg>
+          De Raiz
+        </a>
+        <nav class="site-nav">
+          <a class="hide-sm" href="#o-que-faz">O que faz</a>
+          <a href="privacidade/">Privacidade</a>
+          <a href="apoio/">Apoio</a>
+          <a class="lang" href="en/">EN</a>
+        </nav>
       </div>
+    </header>
 
-      <h2>Onde ir a seguir</h2>
-      <ul>
-        <li><a href="privacidade/">Política de privacidade</a> — o que fica onde, e porquê.</li>
-        <li><a href="apoio/">Apoio</a> — dúvidas, erros e as perguntas mais frequentes.</li>
-      </ul>
+    <main>
+      <section class="hero">
+        <div class="inner">
+          <span class="eyebrow">Em testes · a caminho da App Store</span>
+          <h1>A sua obra, ao cêntimo.</h1>
+          <p>
+            Está a construir a sua moradia e a contratar as especialidades diretamente, sem
+            empreiteiro geral. O De Raiz guarda o que isso custa, o que já pagou e o que falta
+            tratar — no telemóvel, sem internet e sem contas.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#o-que-faz">O que faz</a>
+            <a class="btn btn-ghost" href="privacidade/">Como trata os seus dados</a>
+          </div>
+        </div>
 
-      <p class="meta">
-        A aplicação está em testes. A chegada à App Store é o passo seguinte, e esta página
-        acompanha-o.
-      </p>
+        <div class="device-wrap">
+          <div class="device">
+            <div class="screen">
+              <div class="notch"></div>
+              <p class="screen-title">Resumo</p>
+              <p class="screen-sub">Moradia em Vale do Sol</p>
 
-      <footer>
-        <p>
-          Contacto: <a href="mailto:suporte@casaderaiz.pt">suporte@casaderaiz.pt</a> · Uma aplicação
-          pessoal, sem fins comerciais de recolha de dados.
+              <div class="money-card">
+                <span class="money-label">Previsão total</span>
+                <div class="money-figure">91 100 €</div>
+                <span class="money-of">de 185 000 € de orçamento</span>
+                <div class="bar" aria-hidden="true">
+                  <span style="width: 16.6%"></span>
+                  <span style="width: 24.5%"></span>
+                  <span style="width: 8.1%"></span>
+                </div>
+                <ul class="legend">
+                  <li><span>Pago</span> <b>30 750 €</b></li>
+                  <li><span>Contratado</span> <b>76 100 €</b></li>
+                  <li><span>Estimado</span> <b>15 000 €</b></li>
+                  <li><span>Folga</span> <b>93 900 €</b></li>
+                </ul>
+              </div>
+
+              <div class="screen-row">
+                <span>Fase atual</span>
+                <b>Estrutura · 3 de 12</b>
+              </div>
+              <div class="screen-row">
+                <span>Terreno</span>
+                <b>67 571 €</b>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="quatro-perguntas" style="padding-top: 8rem">
+        <h2>Quatro perguntas, a qualquer momento</h2>
+        <p class="section-lead">
+          São as perguntas que aparecem todas as semanas numa obra própria. A aplicação existe para
+          lhes responder sem abrir uma folha de cálculo.
         </p>
-      </footer>
+        <div class="grid cols-4">
+          <article class="card">
+            <span class="q">01</span>
+            <h3>Quanto vai custar no total?</h3>
+            <p>
+              Orçamento, contingência e previsão lado a lado — com o que está contratado separado do
+              que ainda é estimativa.
+            </p>
+          </article>
+          <article class="card">
+            <span class="q">02</span>
+            <h3>Quanto já paguei a cada um?</h3>
+            <p>
+              Pago até à data e falta pagar, sempre derivados dos pagamentos que registou. Nunca um
+              número escrito à mão.
+            </p>
+          </article>
+          <article class="card">
+            <span class="q">03</span>
+            <h3>Em que fase estou?</h3>
+            <p>
+              As fases da obra com listas de verificação do que costuma ficar esquecido, do livro de
+              obra ao certificado energético.
+            </p>
+          </article>
+          <article class="card">
+            <span class="q">04</span>
+            <h3>Onde está aquele documento?</h3>
+            <p>
+              Contratos, faturas e fotografias anexados ao fornecedor, à especialidade ou ao
+              material a que pertencem.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="o-que-faz">
+        <h2>O que faz</h2>
+        <p class="section-lead">
+          Uma ferramenta pessoal para uma obra. Não é uma plataforma para empreiteiros, não tem
+          vários utilizadores e não se liga ao banco.
+        </p>
+        <div class="grid">
+          <article class="card">
+            <h3>Orçamentos e adjudicação</h3>
+            <p>
+              Peça três orçamentos por especialidade, compare-os no mesmo ecrã e adjudique um. O
+              valor contratado passa a ser o que conta.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Planos de pagamento</h3>
+            <p>
+              Divida o contrato em tranches — 30/40/30 — que reconciliam ao cêntimo com o total
+              adjudicado, sem sobras de arredondamento.
+            </p>
+          </article>
+          <article class="card">
+            <h3>IVA como o escreveu</h3>
+            <p>
+              Escreva com ou sem IVA, como vier na fatura, e a aplicação mostra-lhe de volta da
+              mesma forma. A lista de taxas legais está lá para escolher.
+            </p>
+          </article>
+          <article class="card">
+            <h3>O terreno à parte</h3>
+            <p>
+              A compra tem o seu próprio total — preço, IMT, selo, escritura, registo — fora do
+              orçamento da obra, porque são números de natureza diferente.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Diário e documentos</h3>
+            <p>
+              O que aconteceu em cada dia, com fotografias. E cada contrato ou fatura guardado onde
+              faz sentido procurá-lo mais tarde.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Exportar e guardar</h3>
+            <p>
+              Uma cópia de segurança completa num ficheiro, e exportação CSV e PDF para quando
+              alguém precisa de ver as contas.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="banner">
+        <h2>Não recolhe dados nenhuns</h2>
+        <p>
+          Sem contas, sem servidor, sem publicidade e sem análise de utilização. Funciona
+          inteiramente offline: tudo o que escreve fica no seu dispositivo, e quem fez a aplicação
+          não tem forma de o ver.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="privacidade/">Política de privacidade</a>
+          <a class="btn btn-ghost" href="apoio/">Apoio</a>
+        </div>
+      </section>
+
+      <section class="section tight">
+        <p class="meta">
+          A aplicação não presta aconselhamento fiscal, jurídico ou de engenharia. As fases e os
+          prazos variam de município para município: confirme sempre com a sua câmara e com os
+          profissionais envolvidos. Os valores no ecrã acima são de uma obra fictícia.
+        </p>
+      </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="inner">
+        <span>De Raiz · uma aplicação pessoal, sem fins comerciais de recolha de dados.</span>
+        <nav>
+          <a href="privacidade/">Privacidade</a>
+          <a href="apoio/">Apoio</a>
+          <a href="mailto:suporte@casaderaiz.pt">suporte@casaderaiz.pt</a>
+          <a href="en/">English</a>
+        </nav>
+      </div>
+    </footer>
   </body>
 </html>

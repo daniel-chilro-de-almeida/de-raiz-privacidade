@@ -8,14 +8,46 @@
       name="description"
       content="The De Raiz app collects no data. Everything you enter stays on your device."
     />
+    <link rel="icon" href="../favicon.png" />
     <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
-    <main>
+    <header class="site-header">
+      <div class="inner">
+        <a class="brand" href="../en/">
+          <svg viewBox="0 0 128 128" fill="none" stroke="currentColor" aria-hidden="true">
+            <path
+              d="M25 104V57L64 24l39 33v47"
+              stroke-width="13"
+              stroke-linejoin="miter"
+              stroke-linecap="butt"
+            />
+            <path d="M89 45V25" stroke-width="12" stroke-linecap="butt" />
+            <g stroke-width="3" stroke-linecap="round">
+              <path d="M64 55c0 21 0 36 0 51" />
+              <path d="M64 72c-3 12-7 21-14 34" />
+              <path d="M64 72c3 12 7 21 14 34" />
+              <path d="M64 78c-7 10-17 18-30 26" />
+              <path d="M64 78c7 10 17 18 30 26" />
+              <path d="M64 84c-10 6-26 11-48 15" />
+              <path d="M64 84c10 6 26 11 48 15" />
+            </g>
+          </svg>
+          De Raiz
+        </a>
+        <nav class="site-nav">
+          <a href="../privacy/">Privacy</a>
+          <a href="../support/">Support</a>
+          <a class="lang" href="../privacidade/">PT</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="doc">
       <header>
         <h1>Privacy policy</h1>
         <p class="lead">De Raiz — build control for people managing their own house.</p>
-        <p class="meta">Last updated: 16 September 2026</p>
+        <p class="meta">Last updated: 18 September 2026</p>
         <a class="lang" href="../privacidade/">Ler em português</a>
       </header>
 
@@ -118,13 +150,19 @@
         Questions about this policy:
         <a href="mailto:suporte@casaderaiz.pt">suporte@casaderaiz.pt</a>
       </p>
-
-      <footer>
-        <p>
-          <a href="../en/">De Raiz</a> · <a href="../support/">Support</a> · A personal app with no
-          data-collecting commercial purpose.
-        </p>
-      </footer>
     </main>
+
+    <footer class="site-footer">
+      <div class="inner">
+        <span>De Raiz · a personal app with no data-collecting commercial purpose.</span>
+        <nav>
+          <a href="../en/">Home</a>
+          <a href="../privacy/">Privacy</a>
+          <a href="../support/">Support</a>
+          <a href="mailto:suporte@casaderaiz.pt">suporte@casaderaiz.pt</a>
+          <a href="../">Português</a>
+        </nav>
+      </div>
+    </footer>
   </body>
 </html>

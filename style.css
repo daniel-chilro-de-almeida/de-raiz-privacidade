@@ -1,17 +1,47 @@
 /*
  * The app's own tokens, as CSS. Values copied from src/theme/tokens.ts — sálvia in light,
- * the mark's green dimmed in dark — so the policy reads as part of the same thing the
- * reviewer just installed rather than as a stray text file.
+ * the mark's green dimmed in dark — so the site reads as part of the same thing the reviewer
+ * is about to install rather than as a stray text file.
+ *
+ * The two faces are the app's, self-hosted. Loading them from Google would make a browser
+ * request to a third party on a site whose entire claim is that nothing is sent anywhere.
  */
+
+@font-face {
+  font-family: 'Schibsted Grotesk';
+  src: url('fonts/SchibstedGrotesk_700Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Archivo';
+  src: url('fonts/Archivo_400Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --bg: #e9efe8;
   --bg-a: #f3f7f1;
+  --bg-b: #dae4d8;
   --surface: #f8faf7;
   --surface-muted: #e0eade;
   --border: #d5e0d3;
+  --border-strong: #bdcbba;
   --text: #0f0f0e;
   --text-muted: #67706a;
   --accent: #24503a;
+  --accent-soft: #deeae3;
+  --on-accent: #e9efe8;
+  --shadow: 0 1px 2px rgba(15, 15, 14, 0.06), 0 8px 24px rgba(15, 15, 14, 0.06);
+  --shadow-lift: 0 2px 6px rgba(15, 15, 14, 0.08), 0 24px 60px rgba(15, 15, 14, 0.14);
+  --radius-control: 14px;
+  --radius-card: 16px;
+  --title: 'Schibsted Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --body: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, sans-serif;
   color-scheme: light;
 }
 
@@ -19,12 +49,18 @@
   :root {
     --bg: #1a3123;
     --bg-a: #23402f;
+    --bg-b: #122117;
     --surface: #22392b;
     --surface-muted: #2a4535;
     --border: #314c3b;
+    --border-strong: #41604c;
     --text: #edf3ee;
     --text-muted: #9cb0a3;
     --accent: #8fd3ac;
+    --accent-soft: #2a4535;
+    --on-accent: #122117;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.3);
+    --shadow-lift: 0 2px 6px rgba(0, 0, 0, 0.35), 0 24px 60px rgba(0, 0, 0, 0.45);
     color-scheme: dark;
   }
 }
@@ -33,56 +69,495 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  padding: 2rem 1.25rem 4rem;
-  background: linear-gradient(180deg, var(--bg-a) 0%, var(--bg) 45%);
-  background-attachment: fixed;
+  background: var(--bg);
   color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--body);
   font-size: 17px;
   line-height: 1.6;
   -webkit-text-size-adjust: 100%;
 }
 
-main {
-  max-width: 40rem;
-  margin: 0 auto;
+a {
+  color: var(--accent);
 }
 
-header {
-  margin-bottom: 2.5rem;
-}
-
-h1 {
-  margin: 0 0 0.25rem;
-  font-size: 2rem;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-}
-
-h2 {
-  margin: 2.5rem 0 0.5rem;
-  font-size: 1.15rem;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
-}
-
+h1,
+h2,
 h3 {
-  margin: 1.75rem 0 0.25rem;
-  font-size: 1rem;
-  line-height: 1.35;
-  letter-spacing: -0.01em;
+  font-family: var(--title);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
 }
 
-p,
-li {
+/* ---------- site chrome ---------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: saturate(140%) blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header .inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0.75rem 1.25rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--text);
+  font-family: var(--title);
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.brand svg {
+  display: block;
+  width: 28px;
+  height: 28px;
+  color: var(--accent);
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: auto;
+}
+
+.site-nav a {
+  padding: 0.4rem 0.7rem;
+  border-radius: var(--radius-control);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  background: var(--surface-muted);
   color: var(--text);
 }
 
+.site-nav .lang {
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+@media (max-width: 34rem) {
+  .site-nav .hide-sm {
+    display: none;
+  }
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  margin-top: 5rem;
+  background: var(--bg-b);
+}
+
+.site-footer .inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: center;
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+/* ---------- buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.15rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-control);
+  font-family: var(--title);
+  font-size: 0.95rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.btn-ghost {
+  border-color: var(--border-strong);
+  background: var(--surface);
+  color: var(--text);
+}
+
+/* ---------- hero ---------- */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 4.5rem 1.25rem 0;
+  background:
+    radial-gradient(70rem 26rem at 50% -8rem, var(--accent-soft) 0%, transparent 70%),
+    linear-gradient(180deg, var(--bg-a) 0%, var(--bg) 60%);
+  text-align: center;
+}
+
+.hero .inner {
+  max-width: 44rem;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.hero h1 {
+  margin: 1.25rem 0 0;
+  font-size: clamp(2.4rem, 7vw, 3.75rem);
+}
+
+.hero p {
+  margin: 1rem auto 0;
+  max-width: 34rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 1.75rem;
+}
+
+/* ---------- the device ---------- */
+
+.device-wrap {
+  max-width: 22rem;
+  margin: 3.5rem auto -6rem;
+  padding-bottom: 2rem;
+  perspective: 1400px;
+}
+
+.device {
+  transform: rotateX(8deg) rotateY(-12deg) rotate(2deg);
+  border-radius: 38px;
+  border: 1px solid var(--border-strong);
+  padding: 9px;
+  background: linear-gradient(160deg, var(--surface-muted), var(--bg-b));
+  box-shadow: var(--shadow-lift);
+}
+
+.device .screen {
+  position: relative;
+  border-radius: 30px;
+  padding: 1.5rem 1rem 1.25rem;
+  background: linear-gradient(180deg, var(--bg-a), var(--bg));
+  text-align: left;
+  overflow: hidden;
+}
+
+.device .notch {
+  position: absolute;
+  top: 0.55rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28%;
+  height: 14px;
+  border-radius: 999px;
+  background: var(--border-strong);
+  opacity: 0.55;
+}
+
+.screen-title {
+  margin: 0.6rem 0 0;
+  font-family: var(--title);
+  font-size: 1.15rem;
+}
+
+.screen-sub {
+  margin: 0.1rem 0 1rem;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+.money-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  padding: 0.9rem;
+  box-shadow: var(--shadow);
+}
+
+.money-label {
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.money-figure {
+  font-family: var(--title);
+  font-size: 1.75rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+}
+
+.money-of {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+.bar {
+  display: flex;
+  height: 10px;
+  margin: 0.85rem 0 0.7rem;
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--border);
+}
+
+.bar span:nth-child(1) {
+  background: var(--accent);
+}
+.bar span:nth-child(2) {
+  background: var(--accent-soft);
+}
+.bar span:nth-child(3) {
+  background: var(--border-strong);
+}
+
+.legend {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.35rem 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.74rem;
+}
+
+.legend li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.legend b {
+  color: var(--text);
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+
+.screen-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  font-size: 0.78rem;
+}
+
+.screen-row span {
+  color: var(--text-muted);
+}
+
+.screen-row b {
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- sections ---------- */
+
+.section {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 5rem 1.25rem 0;
+  /* the header is sticky, so an anchor jump must clear it */
+  scroll-margin-top: 4.5rem;
+}
+
+.section.tight {
+  padding-top: 3rem;
+}
+
+.section > h2 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.6rem, 4vw, 2.1rem);
+}
+
+.section > .section-lead {
+  margin: 0 0 2rem;
+  max-width: 38rem;
+  color: var(--text-muted);
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+/* Four cards that should sit in one row on a wide screen, two on a tablet, one on a phone.
+   The default minimum leaves 3 + 1 orphaned at container width. */
+.grid.cols-4 {
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+}
+
+.card {
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.02rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.card .q {
+  display: block;
+  margin-bottom: 0.6rem;
+  color: var(--accent);
+  font-family: var(--title);
+  font-size: 0.8rem;
+}
+
+.banner {
+  max-width: 64rem;
+  margin: 5rem auto 0;
+  padding: 2.25rem 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: var(--accent-soft);
+  text-align: center;
+}
+
+.banner h2 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.banner p {
+  margin: 0 auto;
+  max-width: 34rem;
+  color: var(--text-muted);
+}
+
+.banner .cta-row {
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 40rem) {
+  .banner {
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+    border-radius: 20px;
+  }
+
+  .device {
+    transform: none;
+  }
+
+  .device-wrap {
+    margin-bottom: -4rem;
+  }
+}
+
+/* ---------- documents: the policy and support pages ---------- */
+
+.doc {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 1rem;
+}
+
+.doc header {
+  margin-bottom: 2.5rem;
+}
+
+.doc h1 {
+  margin: 0 0 0.25rem;
+  font-size: clamp(2rem, 6vw, 2.5rem);
+}
+
+.doc h2 {
+  margin: 2.5rem 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.doc h3 {
+  margin: 1.75rem 0 0.25rem;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.doc ul {
+  padding-left: 1.25rem;
+}
+
+.doc li {
+  margin-bottom: 0.4rem;
+}
+
 .lead,
-.meta,
-footer {
+.meta {
   color: var(--text-muted);
 }
 
@@ -91,19 +566,11 @@ footer {
   font-size: 0.85rem;
 }
 
-ul {
-  padding-left: 1.25rem;
-}
-
-li {
-  margin-bottom: 0.4rem;
-}
-
 .callout {
   margin: 1.5rem 0;
   padding: 1rem 1.25rem;
-  border-radius: 16px;
-  background: var(--surface-muted);
+  border-radius: var(--radius-card);
+  background: var(--accent-soft);
 }
 
 .callout p:first-child {
@@ -112,10 +579,6 @@ li {
 
 .callout p:last-child {
   margin-bottom: 0;
-}
-
-a {
-  color: var(--accent);
 }
 
 .lang {
@@ -127,11 +590,4 @@ a {
   background: var(--surface);
   font-size: 0.85rem;
   text-decoration: none;
-}
-
-footer {
-  margin-top: 3rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border);
-  font-size: 0.85rem;
 }
