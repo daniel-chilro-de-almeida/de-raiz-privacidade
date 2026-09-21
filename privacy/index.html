@@ -6,7 +6,7 @@
     <title>Privacy policy — De Raiz</title>
     <meta
       name="description"
-      content="The De Raiz app collects no data. Everything you enter stays on your device."
+      content="An obra you keep to yourself never leaves your phone. An obra you share lives on a server in the European Union that only its members can read."
     />
     <link rel="icon" href="../favicon.png" />
     <link rel="stylesheet" href="../style.css" />
@@ -47,43 +47,115 @@
       <header>
         <h1>Privacy policy</h1>
         <p class="lead">De Raiz — build control for people managing their own house.</p>
-        <p class="meta">Last updated: 18 September 2026</p>
+        <p class="meta">Last updated: 21 September 2026</p>
         <a class="lang" href="../privacidade/">Ler em português</a>
       </header>
 
       <div class="callout">
         <p>
-          <strong>The De Raiz app collects no data about you.</strong> It has no accounts, no
-          server, and it sends nothing anywhere. Everything you enter stays on your device.
+          <strong>An obra you keep to yourself never leaves your phone.</strong> An obra you choose
+          to share with whoever is building it with you also lives on a server in the European
+          Union, where only that obra's members can read it. You decide which of the two happens,
+          obra by obra, and the whole app works with no account at all.
+        </p>
+        <!-- C11: the only sentence on this page that depends on the version. Delete it when sharing exists. -->
+        <p>
+          <strong>Sharing an obra is not possible in the current version of the app</strong>, so
+          every obra is on the phone of whoever wrote it and nowhere else. The account already
+          exists and is optional; what it holds is below.
         </p>
       </div>
 
       <h2>What is collected</h2>
+
+      <h3>If you do not create an account: nothing</h3>
       <p>
-        Nothing. The app does not collect, transmit or have access to any information about you.
-        Specifically, there is no:
+        Without an account, the app does not collect, transmit or have access to any information
+        about you. Everything you write stays in the app's private storage, on your device.
       </p>
+
+      <h3>If you create an account</h3>
+      <p>The account is optional and exists in order to share an obra. Creating one stores:</p>
       <ul>
-        <li>account, login or user identifier;</li>
-        <li>usage analytics, telemetry or crash reporting;</li>
-        <li>advertising, ad tracking or advertising identifiers;</li>
-        <li>third-party service that receives data from the app;</li>
-        <li>server, remote database or cloud sync.</li>
+        <li>
+          <strong>the email address</strong> you registered with, to identify the account, confirm
+          the registration and reset the password;
+        </li>
+        <li>
+          <strong>the password</strong>, if you chose that method — stored irreversibly, never in
+          readable text;
+        </li>
+        <li>
+          <strong>the identifier Apple or Google return</strong>, if you signed in with one of them,
+          and <strong>the name</strong> those companies supplied. Apple often supplies no name at
+          all, in which case no name is stored;
+        </li>
+        <li>
+          <strong>the dates</strong> the account was created and last signed in on, recorded by the
+          authentication service.
+        </li>
       </ul>
       <p>
-        The developer has no way of seeing what is in your build, and receives no copies, summaries
-        or statistics of what is in it.
+        <strong>Signing in sends nothing from your obra.</strong> Creating the account and signing
+        in is all that happens; the quotes, the payments, the documents and the photos stay where
+        they were.
+      </p>
+
+      <h3>If you share an obra</h3>
+      <p>
+        From the moment you choose to put an obra in the cloud — and only from that moment — that
+        obra has a copy on the server: the records you wrote and the files you attached. That is
+        what lets the same obra appear on the phone of whoever is building it with you. Any obra you
+        do not put there still does not leave your device.
+      </p>
+
+      <h3>What still does not exist</h3>
+      <ul>
+        <li>usage analytics, telemetry or usage statistics;</li>
+        <li>automatic crash reporting;</li>
+        <li>advertising, ad tracking or advertising identifiers;</li>
+        <li>selling, sharing or handing your data to third parties for commercial purposes;</li>
+        <li>tracking your activity across other apps or other websites.</li>
+      </ul>
+      <p>
+        The app's developer receives no copies, summaries or statistics of what is in your obra, and
+        does not open anybody's data to read it.
       </p>
 
       <h2>Where your data lives</h2>
       <p>
-        Everything you enter — the build, its phases, the trades, the quotes, the payments, the
-        suppliers, the documents and the photos — is stored in the app's private storage on your own
-        device. Files you attach are copied into that same private folder.
+        <strong>On your device</strong>, always: the obra, its phases, the trades, the quotes, the
+        payments, the suppliers, the documents and the photos are stored in the app's private
+        storage. Files you attach are copied into that same private folder. The app was built to
+        work this way — on a building site with no reception, everything keeps working.
       </p>
       <p>
-        Delete the app and that data is deleted with it. There is no other copy, other than any you
-        have exported yourself.
+        <strong
+          >And, for the account and any obra you share, on a server in the European Union.</strong
+        >
+        The service is <a href="https://supabase.com/privacy" rel="noopener">Supabase</a>, acting as
+        processor, in the <strong>Central EU — Frankfurt, Germany</strong> region. The data does not
+        leave the European Union. Supabase is also what sends the registration and password-reset
+        emails.
+      </p>
+
+      <h2>Who can see a shared obra</h2>
+      <p>
+        <strong>That obra's members, and nobody else.</strong> This is not a matter of good
+        intentions: every table on the server has <em>row level security</em> enabled — a rule the
+        database itself applies on every read and every write, answering "nothing" to anyone who is
+        not a member of that obra. It is not the app's code deciding what to show; it is the server
+        refusing to hand it over.
+      </p>
+      <p>
+        You join an obra by being invited by whoever created it. Each member sees the other members'
+        names — that is what the name is for — and nothing else about them. There are no public
+        profiles, no user search, and no way to find out who has an account.
+      </p>
+      <p>
+        Beyond the members, access exists only for whoever hosts the service, under the processing
+        agreement, and for the app's developer, strictly as far as needed to keep it running or to
+        meet a legal obligation.
       </p>
 
       <h2>Backups you create</h2>
@@ -104,8 +176,8 @@
       <h2>Permissions the app asks for</h2>
       <ul>
         <li>
-          <strong>Camera</strong> — only when you choose to take a photo to attach to the build. The
-          image is saved on the device and does not leave it.
+          <strong>Camera</strong> — only when you choose to take a photo to attach to the obra. The
+          image is saved on the device, and leaves it only if the obra is shared.
         </li>
         <li>
           <strong>Files</strong> — only when you choose a document to attach or a backup file to
@@ -123,31 +195,85 @@
         number or email, and this page. In those cases your browser, phone or mail client takes
         over, and their rules apply.
       </p>
-
-      <h2>Children</h2>
       <p>
-        The app is for managing a private building project and is not directed at children. It
-        collects data from nobody, at any age.
+        Signing in with Apple or Google goes through those companies' own sign-in screens, and at
+        that moment their policies apply too. If you would rather not involve them, you can create
+        an account with an email address and a password alone.
+      </p>
+
+      <h2>How long it is kept</h2>
+      <ul>
+        <li>
+          <strong>On your device</strong>, for as long as you want. Deleting the app deletes that
+          data with it, and all that remains is whatever you exported or shared.
+        </li>
+        <li>
+          <strong>The account</strong>, for as long as it exists. Deleting it deletes the email, the
+          name and the link to the obras it was a member of.
+        </li>
+        <li>
+          <strong>A shared obra</strong>, for as long as it has members. When the last member leaves
+          it or deletes their account, the obra, its records and its files are deleted from the
+          server. Leaving a shared obra does not delete the copy on your phone.
+        </li>
+      </ul>
+
+      <h2>Legal basis</h2>
+      <p>
+        Processing the email address and the name rests on performing the service you asked for —
+        the account and sharing do not work without them (GDPR, Article 6(1)(b)). There is no
+        processing based on marketing interests, because there is no marketing. The controller is
+        the person who develops the app, reachable at the address below.
       </p>
 
       <h2>Your rights</h2>
       <p>
-        Since nothing is collected or processed by the app's developer, there are no data of yours
-        to access, correct, export or erase on the developer's side. The data is entirely in your
-        possession: you can export it at any time from the backup screen, and delete it by
-        uninstalling the app.
+        Over the data on your device, the control is entirely yours: you can see it, correct it,
+        export it from the backup screen, and delete it by uninstalling the app. Nobody has to hand
+        it to you, because it never left.
+      </p>
+      <p>Over the data on the server, you have the right to:</p>
+      <ul>
+        <li><strong>know</strong> what is stored and access it;</li>
+        <li><strong>correct</strong> anything that is wrong;</li>
+        <li>
+          <strong>receive a copy</strong> in a readable format — the app's export does exactly that,
+          and you do not need anybody's permission to run it;
+        </li>
+        <li><strong>delete</strong> the account and what belongs to it;</li>
+        <li><strong>object to</strong> the processing and <strong>restrict</strong> it.</li>
+      </ul>
+      <p>
+        <strong>To delete the account</strong>, write to
+        <a href="mailto:suporte@casaderaiz.pt">suporte@casaderaiz.pt</a> from the account's own
+        address. The email, the name and any obra you are the last member of are deleted, within 30
+        days. Export the backup before asking: once it is deleted there is nothing to recover it
+        from.
+      </p>
+      <p>
+        If you believe your data is being handled improperly, you can complain to the Portuguese
+        data protection authority,
+        <a href="https://www.cnpd.pt/" rel="noopener">Comissão Nacional de Proteção de Dados</a>.
+      </p>
+
+      <h2>Children</h2>
+      <p>
+        The app is for managing a private building project and is not directed at children. No
+        children's data is requested or collected, and the account is not meant to be created by
+        them.
       </p>
 
       <h2>Changes to this policy</h2>
       <p>
         If the app ever does something that requires changing this text, the text changes here, with
-        the updated date above. A future version that collected or transmitted anything would have
-        to say so on this page before doing it.
+        the updated date above. A version that collects or transmits anything new has to say so on
+        this page <em>before</em> doing it — that rule is what forced this page to be rewritten when
+        the app gained accounts.
       </p>
 
       <h2>Contact</h2>
       <p>
-        Questions about this policy:
+        Questions about this policy, or to exercise any of the rights above:
         <a href="mailto:suporte@casaderaiz.pt">suporte@casaderaiz.pt</a>
       </p>
     </main>
