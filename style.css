@@ -591,3 +591,18 @@ h3 {
   font-size: 0.85rem;
   text-decoration: none;
 }
+
+/* ---------- the invite page ---------- */
+
+.invite-code {
+  margin: 0.25rem 0 1rem;
+  font-family: var(--title);
+  font-size: clamp(2rem, 9vw, 2.6rem);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.14em;
+  color: var(--text);
+}
+
+.callout .eyebrow {
+  margin: 0;
+}

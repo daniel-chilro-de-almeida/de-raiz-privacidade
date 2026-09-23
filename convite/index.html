@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="robots" content="noindex" />
+    <title>Convite — De Raiz</title>
+    <meta
+      name="description"
+      content="Um convite para entrar numa obra partilhada na aplicação De Raiz."
+    />
+    <link rel="icon" href="../favicon.png" />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="inner">
+        <a class="brand" href="../">
+          <svg viewBox="0 0 128 128" fill="none" stroke="currentColor" aria-hidden="true">
+            <path
+              d="M25 104V57L64 24l39 33v47"
+              stroke-width="13"
+              stroke-linejoin="miter"
+              stroke-linecap="butt"
+            />
+            <path d="M89 45V25" stroke-width="12" stroke-linecap="butt" />
+            <g stroke-width="3" stroke-linecap="round">
+              <path d="M64 55c0 21 0 36 0 51" />
+              <path d="M64 72c-3 12-7 21-14 34" />
+              <path d="M64 72c3 12 7 21 14 34" />
+              <path d="M64 78c-7 10-17 18-30 26" />
+              <path d="M64 78c7 10 17 18 30 26" />
+              <path d="M64 84c-10 6-26 11-48 15" />
+              <path d="M64 84c10 6 26 11 48 15" />
+            </g>
+          </svg>
+          De Raiz
+        </a>
+        <nav class="site-nav">
+          <a href="../privacidade/">Privacidade</a>
+          <a href="../apoio/">Apoio</a>
+          <a class="lang" href="../invite/" data-carry-hash>EN</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="doc">
+      <header>
+        <h1>Um convite para uma obra</h1>
+        <p class="lead">
+          Alguém que está a construir uma casa com a De Raiz convidou-o para a mesma obra.
+        </p>
+        <p class="meta">Última atualização: 22 de setembro de 2026</p>
+        <a class="lang" href="../invite/" data-carry-hash>Read in English</a>
+      </header>
+
+      <div class="callout" id="with-code">
+        <p class="eyebrow">Código do convite</p>
+        <p class="invite-code" id="code">—</p>
+        <p><a class="btn btn-primary" id="open" href="deraiz://convite">Abrir na De Raiz</a></p>
+        <p>
+          O botão abre a aplicação, se estiver instalada neste telemóvel. O convite serve uma só
+          vez, e expira sete dias depois de ter sido criado.
+        </p>
+      </div>
+
+      <div class="callout" id="without-code" hidden>
+        <p>
+          <strong>Este endereço não traz um código válido.</strong> O código vem no fim do link,
+          depois do <code>#</code>, e tem seis letras e números. Confirme o link com quem o
+          convidou, ou peça-lhe que lhe leia o código.
+        </p>
+      </div>
+
+      <noscript>
+        <p>
+          Sem JavaScript, esta página não consegue mostrar o código. Está no fim do endereço, depois
+          do <code>#</code>: abra a De Raiz, toque em
+          <strong>Tenho um convite para uma obra</strong> e escreva-o.
+        </p>
+      </noscript>
+
+      <h2>Ainda não tem a aplicação?</h2>
+      <p>
+        A De Raiz é uma aplicação para iPhone e ainda não está na App Store: quem o convidou sabe
+        como a instalar. Depois de a instalar, volte a esta página e toque em
+        <strong>Abrir na De Raiz</strong> — ou abra a aplicação, toque em
+        <strong>Tenho um convite para uma obra</strong> e escreva o código acima.
+      </p>
+      <p>
+        Para entrar numa obra partilhada precisa de uma conta, que pode criar dentro da aplicação
+        com Apple, com Google ou com um email.
+      </p>
+
+      <h2>O que esta página faz com o código</h2>
+      <p>
+        Nada, além de o mostrar. O código vem depois do <code>#</code> no endereço, e um navegador
+        nunca envia essa parte a nenhum servidor — nem ao que serve esta página. Não há aqui análise
+        de visitas nem scripts de terceiros. Quem decide se o convite é válido é o servidor da De
+        Raiz, quando tocar em <strong>Entrar na obra</strong>, dentro da aplicação.
+      </p>
+
+      <h2>O que acontece quando aceita</h2>
+      <p>
+        A obra chega inteira ao seu telemóvel e continua a funcionar sem rede. O que escrever chega
+        aos outros membros, e o que eles escreverem chega a si. Uma obra partilhada fica também num
+        servidor na União Europeia que só os membros dessa obra conseguem ler — a
+        <a href="../privacidade/">política de privacidade</a> diz o que isso significa.
+      </p>
+      <p>
+        A De Raiz guarda uma obra por telemóvel. Se já tiver uma neste, a aplicação pede-lhe que a
+        exporte e a apague antes de entrar na outra — a cópia exportada é sua.
+      </p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="inner">
+        <span>De Raiz · uma aplicação pessoal, sem fins comerciais de recolha de dados.</span>
+        <nav>
+          <a href="../">Início</a>
+          <a href="../privacidade/">Privacidade</a>
+          <a href="../apoio/">Apoio</a>
+          <a href="mailto:suporte@casaderaiz.pt">suporte@casaderaiz.pt</a>
+          <a href="../invite/" data-carry-hash>English</a>
+        </nav>
+      </div>
+    </footer>
+    <script>
+      // The code travels after the # so that no server ever receives it — not GitHub's, not
+      // anybody's. This reads it, checks it is six characters of the alphabet the app uses, and
+      // hands it to the app through the deraiz:// link. It sends nothing anywhere.
+      (function () {
+        var alphabet = /^[2-9A-HJ-NP-Z]{6}$/;
+        var raw = (window.location.hash || '').slice(1);
+        // A link mangled by a messaging app can carry a broken %-escape, which throws. Read it as
+        // written instead: the check below then decides, and says so, rather than the page dying.
+        var decoded = raw;
+        try {
+          decoded = decodeURIComponent(raw);
+        } catch (error) {
+          decoded = raw;
+        }
+        var code = decoded.replace(/[^A-Za-z0-9]/g, '').toUpperCase();
+        var valid = alphabet.test(code);
+        document.querySelectorAll('[data-carry-hash]').forEach(function (link) {
+          if (valid) link.setAttribute('href', link.getAttribute('href') + '#' + code);
+        });
+        if (!valid) {
+          document.getElementById('with-code').hidden = true;
+          document.getElementById('without-code').hidden = false;
+          return;
+        }
+        document.getElementById('code').textContent = code.slice(0, 3) + ' \u00b7 ' + code.slice(3);
+        document.getElementById('open').setAttribute('href', 'deraiz://convite?codigo=' + code);
+      })();
+    </script>
+  </body>
+</html>

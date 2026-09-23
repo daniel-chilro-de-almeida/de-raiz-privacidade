@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="robots" content="noindex" />
+    <title>Invite — De Raiz</title>
+    <meta name="description" content="An invite to join a shared obra in the De Raiz app." />
+    <link rel="icon" href="../favicon.png" />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="inner">
+        <a class="brand" href="../">
+          <svg viewBox="0 0 128 128" fill="none" stroke="currentColor" aria-hidden="true">
+            <path
+              d="M25 104V57L64 24l39 33v47"
+              stroke-width="13"
+              stroke-linejoin="miter"
+              stroke-linecap="butt"
+            />
+            <path d="M89 45V25" stroke-width="12" stroke-linecap="butt" />
+            <g stroke-width="3" stroke-linecap="round">
+              <path d="M64 55c0 21 0 36 0 51" />
+              <path d="M64 72c-3 12-7 21-14 34" />
+              <path d="M64 72c3 12 7 21 14 34" />
+              <path d="M64 78c-7 10-17 18-30 26" />
+              <path d="M64 78c7 10 17 18 30 26" />
+              <path d="M64 84c-10 6-26 11-48 15" />
+              <path d="M64 84c10 6 26 11 48 15" />
+            </g>
+          </svg>
+          De Raiz
+        </a>
+        <nav class="site-nav">
+          <a href="../privacy/">Privacy</a>
+          <a href="../support/">Support</a>
+          <a class="lang" href="../convite/" data-carry-hash>PT</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="doc">
+      <header>
+        <h1>An invite to an obra</h1>
+        <p class="lead">
+          Someone building a house with De Raiz has invited you into the same obra.
+        </p>
+        <p class="meta">Last updated: 22 September 2026</p>
+        <a class="lang" href="../convite/" data-carry-hash>Ler em português</a>
+      </header>
+
+      <div class="callout" id="with-code">
+        <p class="eyebrow">Invite code</p>
+        <p class="invite-code" id="code">—</p>
+        <p><a class="btn btn-primary" id="open" href="deraiz://convite">Open in De Raiz</a></p>
+        <p>
+          The button opens the app, if it is installed on this phone. The invite works once, and
+          expires seven days after it was created.
+        </p>
+      </div>
+
+      <div class="callout" id="without-code" hidden>
+        <p>
+          <strong>This address does not carry a valid code.</strong> The code comes at the end of
+          the link, after the <code>#</code>, and is six letters and digits. Check the link with the
+          person who invited you, or ask them to read you the code.
+        </p>
+      </div>
+
+      <noscript>
+        <p>
+          Without JavaScript this page cannot show the code. It is at the end of the address, after
+          the <code>#</code>: open De Raiz, tap <strong>I have an invite to an obra</strong>
+          and type it.
+        </p>
+      </noscript>
+
+      <h2>Don’t have the app yet?</h2>
+      <p>
+        De Raiz is an iPhone app and is not on the App Store yet: the person who invited you knows
+        how to install it. Once it is installed, come back to this page and tap
+        <strong>Open in De Raiz</strong> — or open the app, tap
+        <strong>I have an invite to an obra</strong> and type the code above.
+      </p>
+      <p>
+        Joining a shared obra needs an account, which you can create inside the app with Apple, with
+        Google or with an email address.
+      </p>
+
+      <h2>What this page does with the code</h2>
+      <p>
+        Nothing, beyond showing it. The code comes after the <code>#</code> in the address, and a
+        browser never sends that part to any server — not even the one serving this page. There are
+        no visitor analytics and no third-party scripts here. What decides whether the invite is
+        valid is the De Raiz server, when you tap <strong>Join the obra</strong> inside the app.
+      </p>
+
+      <h2>What happens when you accept</h2>
+      <p>
+        The whole obra arrives on your phone and keeps working with no signal. What you write
+        reaches the other members, and what they write reaches you. A shared obra is also kept on a
+        server in the European Union that only that obra’s members can read — the
+        <a href="../privacy/">privacy policy</a> says what that means.
+      </p>
+      <p>
+        De Raiz keeps one obra per phone. If this phone already has one, the app asks you to export
+        and delete it before joining the other — the exported copy is yours.
+      </p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="inner">
+        <span>De Raiz · a personal app with no data-collecting commercial purpose.</span>
+        <nav>
+          <a href="../en/">Home</a>
+          <a href="../privacy/">Privacy</a>
+          <a href="../support/">Support</a>
+          <a href="mailto:suporte@casaderaiz.pt">suporte@casaderaiz.pt</a>
+          <a href="../convite/" data-carry-hash>Português</a>
+        </nav>
+      </div>
+    </footer>
+    <script>
+      // The code travels after the # so that no server ever receives it — not GitHub's, not
+      // anybody's. This reads it, checks it is six characters of the alphabet the app uses, and
+      // hands it to the app through the deraiz:// link. It sends nothing anywhere.
+      (function () {
+        var alphabet = /^[2-9A-HJ-NP-Z]{6}$/;
+        var raw = (window.location.hash || '').slice(1);
+        // A link mangled by a messaging app can carry a broken %-escape, which throws. Read it as
+        // written instead: the check below then decides, and says so, rather than the page dying.
+        var decoded = raw;
+        try {
+          decoded = decodeURIComponent(raw);
+        } catch (error) {
+          decoded = raw;
+        }
+        var code = decoded.replace(/[^A-Za-z0-9]/g, '').toUpperCase();
+        var valid = alphabet.test(code);
+        document.querySelectorAll('[data-carry-hash]').forEach(function (link) {
+          if (valid) link.setAttribute('href', link.getAttribute('href') + '#' + code);
+        });
+        if (!valid) {
+          document.getElementById('with-code').hidden = true;
+          document.getElementById('without-code').hidden = false;
+          return;
+        }
+        document.getElementById('code').textContent = code.slice(0, 3) + ' \u00b7 ' + code.slice(3);
+        document.getElementById('open').setAttribute('href', 'deraiz://convite?codigo=' + code);
+      })();
+    </script>
+  </body>
+</html>
