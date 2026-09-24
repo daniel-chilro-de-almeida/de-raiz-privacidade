@@ -529,17 +529,14 @@ h3 {
   padding: 2.5rem 1.25rem 1rem;
 }
 
-/* Running text is left-aligned (it was justified for one release, and read worse). Hyphenation
-   still breaks a long word at the end of a line; it follows each page's lang attribute, which is
-   why every page declares one. The hero, the banner, the phone mock-up and the footer keep their
-   own alignment. */
+/* Running text is left-aligned and unhyphenated (it was justified and hyphenated for one release,
+   and read worse). The hero, the banner, the phone mock-up and the footer keep their own
+   alignment. */
 .doc p,
 .doc li,
 .card p,
 .section-lead {
   text-align: left;
-  -webkit-hyphens: auto;
-  hyphens: auto;
 }
 
 .doc header {
