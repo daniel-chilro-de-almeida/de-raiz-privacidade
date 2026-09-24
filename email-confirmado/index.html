@@ -44,8 +44,10 @@
 
     <main class="doc">
       <header>
-        <h1>Email confirmado</h1>
-        <p class="lead">A sua conta De Raiz está ativa.</p>
+        <h1 id="heading" data-expired="Ligação expirada">Email confirmado</h1>
+        <p class="lead" id="lead" data-expired="Esta ligação já não confirma o email.">
+          A sua conta De Raiz está ativa.
+        </p>
         <p class="meta">Última atualização: 24 de setembro de 2026</p>
         <a class="lang" href="../email-confirmed/">Read in English</a>
       </header>
@@ -120,6 +122,12 @@
         if (failed) {
           document.getElementById('confirmed').hidden = true;
           document.getElementById('expired').hidden = false;
+          // The heading says the account is active, which an expired link has not made true.
+          ['heading', 'lead'].forEach(function (id) {
+            var node = document.getElementById(id);
+            node.textContent = node.getAttribute('data-expired');
+          });
+          document.title = 'Ligação expirada — De Raiz';
         }
       })();
     </script>
