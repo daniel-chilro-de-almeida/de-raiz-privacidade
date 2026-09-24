@@ -523,9 +523,22 @@ h3 {
 /* ---------- documents: the policy and support pages ---------- */
 
 .doc {
-  max-width: 40rem;
+  /* the header's and the footer's width, so the text starts where the logo does */
+  max-width: 64rem;
   margin: 0 auto;
   padding: 2.5rem 1.25rem 1rem;
+}
+
+/* Running text is justified. Hyphenation is what keeps that from opening gaps on a phone's width;
+   it follows each page's lang attribute, which is why every page declares one. The hero, the
+   banner, the phone mock-up and the footer keep their own alignment. */
+.doc p,
+.doc li,
+.card p,
+.section-lead {
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 .doc header {
