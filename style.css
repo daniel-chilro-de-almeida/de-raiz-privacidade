@@ -1,6 +1,6 @@
 /*
- * The app's own tokens, as CSS. Values copied from src/theme/tokens.ts — sálvia in light,
- * the mark's green dimmed in dark — so the site reads as part of the same thing the reviewer
+ * The app's own tokens, as CSS. Values copied from src/theme/tokens.ts – sálvia in light,
+ * the mark's green dimmed in dark – so the site reads as part of the same thing the reviewer
  * is about to install rather than as a stray text file.
  *
  * The two faces are the app's, self-hosted. Loading them from Google would make a browser
