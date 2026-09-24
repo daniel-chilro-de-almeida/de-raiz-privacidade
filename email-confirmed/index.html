@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="robots" content="noindex" />
+    <title>Email confirmed — De Raiz</title>
+    <meta name="description" content="The email for your De Raiz account is confirmed." />
+    <link rel="icon" href="../favicon.png" />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="inner">
+        <a class="brand" href="../">
+          <svg viewBox="0 0 128 128" fill="none" stroke="currentColor" aria-hidden="true">
+            <path
+              d="M25 104V57L64 24l39 33v47"
+              stroke-width="13"
+              stroke-linejoin="miter"
+              stroke-linecap="butt"
+            />
+            <path d="M89 45V25" stroke-width="12" stroke-linecap="butt" />
+            <g stroke-width="3" stroke-linecap="round">
+              <path d="M64 55c0 21 0 36 0 51" />
+              <path d="M64 72c-3 12-7 21-14 34" />
+              <path d="M64 72c3 12 7 21 14 34" />
+              <path d="M64 78c-7 10-17 18-30 26" />
+              <path d="M64 78c7 10 17 18 30 26" />
+              <path d="M64 84c-10 6-26 11-48 15" />
+              <path d="M64 84c10 6 26 11 48 15" />
+            </g>
+          </svg>
+          De Raiz
+        </a>
+        <nav class="site-nav">
+          <a href="../privacy/">Privacy</a>
+          <a href="../support/">Support</a>
+          <a class="lang" href="../email-confirmado/">PT</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="doc">
+      <header>
+        <h1>Email confirmed</h1>
+        <p class="lead">Your De Raiz account is active.</p>
+        <p class="meta">Last updated: 24 September 2026</p>
+        <a class="lang" href="../email-confirmado/">Ler em português</a>
+      </header>
+
+      <div class="callout" id="confirmed">
+        <p>
+          <strong>Go back to the app and sign in</strong> with this email and the password you
+          chose, under <strong>More → Sign in or create an account</strong>.
+        </p>
+        <p><a class="btn btn-primary" href="deraiz://">Open De Raiz</a></p>
+        <p>
+          The button opens the app, if it is installed on this device. If you opened the email on a
+          computer, that is fine: the confirmation is done, and you only need to sign in on your
+          phone.
+        </p>
+      </div>
+
+      <div class="callout" id="expired" hidden>
+        <p><strong>This link has expired or has already been used.</strong></p>
+        <p>
+          If you had already confirmed the email, the account is active: just sign in, under
+          <strong>More → Sign in or create an account</strong>. If not, create the account again in
+          the app, with the same email and the same password, and a new link arrives. If it does
+          not, write to <a href="mailto:suporte@casaderaiz.pt">suporte@casaderaiz.pt</a>.
+        </p>
+      </div>
+
+      <noscript>
+        <p>
+          If the app says the email still needs confirming, the link you opened had already expired:
+          create the account again, with the same email and password, and a new one arrives.
+        </p>
+      </noscript>
+
+      <h2>What this page does</h2>
+      <p>
+        Nothing, beyond telling you what to do next. The email is confirmed by the De Raiz server
+        before you arrive here. The address may carry a one-time code that only the app that asked
+        for it can use: this page does not use it, and takes it out of the address bar. There are no
+        visitor analytics and no third-party scripts here.
+      </p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="inner">
+        <span>De Raiz · a personal app with no data-collecting commercial purpose.</span>
+        <nav>
+          <a href="../en/">Home</a>
+          <a href="../privacy/">Privacy</a>
+          <a href="../support/">Support</a>
+          <a href="mailto:suporte@casaderaiz.pt">suporte@casaderaiz.pt</a>
+          <a href="../email-confirmado/">Português</a>
+        </nav>
+      </div>
+    </footer>
+    <script>
+      // GoTrue confirms the address before it sends anyone here, so this page has nothing to do
+      // except tell an expired link from a good one. It reads the address, takes the one-time code
+      // and anything else out of the address bar, and sends nothing anywhere.
+      (function () {
+        var query = new URLSearchParams(window.location.search);
+        var hash = new URLSearchParams((window.location.hash || '').slice(1));
+        var failed = ['error', 'error_code'].some(function (name) {
+          return query.has(name) || hash.has(name);
+        });
+        if (window.location.search || window.location.hash) {
+          try {
+            window.history.replaceState(null, '', window.location.pathname);
+          } catch (error) {
+            // Nothing to do: the address bar keeps what it had, and the page still reads right.
+          }
+        }
+        if (failed) {
+          document.getElementById('confirmed').hidden = true;
+          document.getElementById('expired').hidden = false;
+        }
+      })();
+    </script>
+  </body>
+</html>
