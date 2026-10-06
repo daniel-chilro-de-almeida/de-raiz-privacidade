@@ -49,7 +49,7 @@
       <header>
         <h1>Política de privacidade</h1>
         <p class="lead">De Raiz – controlo de obra para quem constrói a sua própria casa.</p>
-        <p class="meta">Última atualização: 29 de setembro de 2026</p>
+        <p class="meta">Última atualização: 6 de outubro de 2026</p>
         <a class="lang" href="../privacy/">Read in English</a>
       </header>
 
@@ -60,18 +60,28 @@
           Europeia, onde só os membros dessa obra a conseguem ler. É você que decide qual das duas
           coisas acontece, obra a obra, e a aplicação funciona inteira sem conta nenhuma.
         </p>
+        <p>
+          <strong>No computador</strong>, em
+          <a href="https://app.casaderaiz.pt">app.casaderaiz.pt</a>, é diferente, e por isso tem uma
+          secção própria abaixo: lá a conta é obrigatória, a obra está sempre na nuvem, e o browser
+          guarda uma cópia dela até terminar sessão.
+        </p>
       </div>
 
       <h2>O que é recolhido</h2>
 
       <h3>Se não criar conta: nada</h3>
       <p>
-        Sem conta, a aplicação não recolhe, não transmite e não tem acesso a qualquer informação
-        sua. Tudo o que escreve fica no armazenamento privado da aplicação, no seu dispositivo.
+        Sem conta – o que só é possível no telemóvel –, a aplicação não recolhe, não transmite e não
+        tem acesso a qualquer informação sua. Tudo o que escreve fica no armazenamento privado da
+        aplicação, no seu dispositivo.
       </p>
 
       <h3>Se criar conta</h3>
-      <p>A conta é opcional e serve para partilhar uma obra. Ao criá-la ficam guardados:</p>
+      <p>
+        No telemóvel, a conta é opcional e serve para partilhar uma obra; no computador, é a forma
+        de lá entrar. Ao criá-la ficam guardados:
+      </p>
       <ul>
         <li>
           <strong>o endereço de email</strong> com que se registou, para identificar a conta,
@@ -107,11 +117,16 @@
 
       <h3>O que continua a não existir</h3>
       <ul>
-        <li>análise de utilização, telemetria ou estatísticas de uso;</li>
+        <li>
+          análise de utilização, telemetria ou estatísticas de uso na aplicação (o que o browser
+          pode comunicar por si ao Cloudflare está descrito em
+          <a href="#computador">No computador</a>);
+        </li>
         <li>relatórios de erro automáticos;</li>
         <li>publicidade, seguimento publicitário ou identificadores de publicidade;</li>
         <li>venda, partilha ou cedência dos seus dados a terceiros para fins comerciais;</li>
-        <li>seguimento da sua atividade noutras aplicações ou noutros sites.</li>
+        <li>seguimento da sua atividade noutras aplicações ou noutros sites;</li>
+        <li>cookies – no computador, a sessão fica no armazenamento do browser.</li>
       </ul>
       <p>
         Quem desenvolve a aplicação não recebe cópias, resumos nem estatísticas do que está na sua
@@ -120,7 +135,7 @@
 
       <h2>Onde ficam os seus dados</h2>
       <p>
-        <strong>No seu dispositivo</strong>, sempre: a obra, as fases, as especialidades, os
+        <strong>No seu telemóvel</strong>, sempre: a obra, as fases, as especialidades, os
         orçamentos, os pagamentos, os fornecedores, os documentos e as fotografias ficam gravados no
         armazenamento privado da aplicação. Os ficheiros que anexa são copiados para essa mesma
         pasta privada. A aplicação foi feita para trabalhar assim – numa obra sem rede, tudo
@@ -134,6 +149,59 @@
         como subcontratante, na região <strong>Central EU – Frankfurt, Alemanha</strong>. Os dados
         não saem da União Europeia. É também a Supabase que envia os emails de confirmação de
         registo e de recuperação de palavra-passe.
+      </p>
+      <p>
+        <strong>E, no computador, no browser em que entrou</strong>, enquanto a sessão estiver
+        aberta – a secção seguinte explica.
+      </p>
+
+      <h2 id="computador">No computador</h2>
+      <p>
+        A De Raiz também funciona num browser, em
+        <a href="https://app.casaderaiz.pt">app.casaderaiz.pt</a>. É a mesma aplicação, e o browser
+        é mais um dispositivo da obra. Três coisas são diferentes do telemóvel:
+      </p>
+      <ul>
+        <li>
+          <strong>A conta é obrigatória, e a obra está sempre na nuvem.</strong> O computador só
+          abre obras partilhadas – as que já estão no servidor, ou uma criada lá, que é guardada no
+          servidor no momento em que é criada. Uma obra que guarde só para si, no telemóvel, nunca
+          chega ao computador.
+        </li>
+        <li>
+          <strong>O browser guarda uma cópia da obra</strong> – os registos, as miniaturas das
+          fotografias, e os documentos e as fotografias que abriu – no armazenamento privado que dá
+          a este site, para a aplicação trabalhar sem rede, e guarda a sessão no seu
+          <code>localStorage</code>.
+          <strong>Terminar sessão envia o que falta enviar e apaga as duas.</strong> Sair de uma
+          obra e apagar a conta também apagam a cópia deste browser. Se o browser precisar de
+          espaço, pode apagá-la por iniciativa própria; a obra está na nuvem e volta a abrir-se.
+        </li>
+        <li>
+          <strong>Os lembretes ficam nos telemóveis.</strong> O computador não envia notificações, e
+          o site proíbe ao próprio browser a câmara, o microfone e a localização: os ficheiros
+          escolhem-se no seletor do browser ou arrastam-se para a página. Alguns browsers perguntam
+          se o site pode guardar dados de forma persistente – é a cópia da obra, e recusar só quer
+          dizer que o browser a pode apagar se precisar de espaço.
+        </li>
+      </ul>
+      <p>
+        <strong>A página é servida pelo Cloudflare.</strong> O
+        <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">Cloudflare</a> aloja os
+        ficheiros da aplicação e entrega-os ao seu browser, como subcontratante, nos termos do seu
+        acordo de tratamento de dados. Para isso vê os pedidos que o browser lhe faz: o endereço IP,
+        o browser e o sistema (<em>user agent</em>) e a página pedida. É uma empresa dos Estados
+        Unidos com servidores em todo o mundo, e o pedido é atendido pelo mais próximo. Os dados da
+        obra não passam por ele: vão do browser diretamente para o servidor na União Europeia.
+      </p>
+      <p>
+        <strong>O browser pode avisar o Cloudflare quando uma página não carrega.</strong> O
+        Cloudflare acrescenta às respostas um pedido de <em>Network Error Logging</em>, e os
+        browsers que o suportam enviam um relatório para <code>a.nel.cloudflare.com</code> quando um
+        carregamento falha – com o endereço pedido, o tipo de erro e o momento, e, como qualquer
+        pedido, o endereço IP. Não é análise de utilização nem algo que a aplicação faça, e não há
+        forma de o desligar no serviço gratuito que aloja esta página; fica dito aqui porque é um
+        pedido que o seu browser faz a um terceiro.
       </p>
 
       <h2>Quem consegue ver uma obra partilhada</h2>
@@ -149,9 +217,9 @@
         outros membros da mesma obra (é para isso que o nome existe), qual deles é o responsável,
         desde quando cada um lá está e se algum ainda tem uma versão anterior da aplicação, e mais
         nada sobre eles. Para isso, a aplicação guarda junto de cada membro o número da versão que
-        tem instalada – o mesmo para todos os que instalaram essa versão, e nada que distinga um
-        telemóvel de outro. Não há perfis públicos, não há pesquisa de utilizadores, e não há forma
-        de descobrir quem tem conta.
+        tem instalada – ou, no computador, o da versão que o browser está a usar: o mesmo para todos
+        os que têm essa versão, e nada que distinga um dispositivo de outro. Não há perfis públicos,
+        não há pesquisa de utilizadores, e não há forma de descobrir quem tem conta.
       </p>
       <p>
         Um convite é um código de seis caracteres que serve uma vez e expira ao fim de sete dias. O
@@ -170,7 +238,8 @@
       <p>
         A aplicação permite exportar um ficheiro único com todos os seus registos e ficheiros. Esse
         ficheiro é criado no seu dispositivo e entregue à folha de partilha do iOS: é você que
-        escolhe para onde vai – Ficheiros, iCloud Drive, email, ou outro serviço.
+        escolhe para onde vai – Ficheiros, iCloud Drive, email, ou outro serviço. No computador, o
+        browser descarrega-o para a pasta de transferências.
       </p>
       <p>
         A partir do momento em que o envia para um serviço, passam a aplicar-se os termos e a
@@ -183,6 +252,7 @@
       </p>
 
       <h2>Autorizações que a aplicação pede</h2>
+      <p>No telemóvel, duas, e só quando são precisas:</p>
       <ul>
         <li>
           <strong>Câmara</strong> – apenas quando escolhe tirar uma fotografia para juntar à obra. A
@@ -214,8 +284,12 @@
       <h2>Durante quanto tempo fica guardado</h2>
       <ul>
         <li>
-          <strong>No seu dispositivo</strong>, enquanto quiser. Apagar a aplicação apaga esses dados
+          <strong>No seu telemóvel</strong>, enquanto quiser. Apagar a aplicação apaga esses dados
           com ela, e a única coisa que sobra é o que tiver exportado ou partilhado.
+        </li>
+        <li>
+          <strong>Num browser</strong>, até terminar sessão, sair da obra ou apagar a conta – cada
+          uma das três apaga a cópia da obra e a sessão desse browser.
         </li>
         <li>
           <strong>A conta</strong>, enquanto existir. Apagá-la apaga o email, o nome e a ligação às
@@ -224,7 +298,8 @@
         <li>
           <strong>Uma obra partilhada</strong>, enquanto tiver membros. Quando o último membro sai
           dela ou apaga a conta, a obra, os seus registos e os seus ficheiros são apagados do
-          servidor. Sair de uma obra partilhada não apaga a cópia que tem no seu telemóvel.
+          servidor. Sair de uma obra partilhada apaga-a também do telemóvel ou do browser de onde
+          sai – a obra continua para os outros membros.
         </li>
       </ul>
 
@@ -240,7 +315,8 @@
       <p>
         Sobre os dados que estão no seu dispositivo, o controlo é inteiramente seu: pode vê-los,
         corrigi-los, exportá-los a partir do ecrã de cópia de segurança e apagá-los desinstalando a
-        aplicação. Ninguém precisa de lhos entregar, porque nunca saíram de lá.
+        aplicação – ou, no computador, terminando sessão. Ninguém precisa de lhos entregar, porque
+        nunca saíram de lá.
       </p>
       <p>Sobre os dados que estão no servidor, tem direito a:</p>
       <ul>
@@ -262,8 +338,9 @@
         que há mais pessoas, sai, e elas ficam intactas para quem lá está. Se for a pessoa
         responsável por uma obra em que há mais membros, escolhe antes se a passa a um deles ou se a
         apaga para todos – nenhuma das duas acontece sem que a escolha. A obra guardada no seu
-        telemóvel não é tocada. Antes de apagar, exporte a cópia de segurança: o que estiver só no
-        servidor deixa de ter de onde ser recuperado.
+        telemóvel não é tocada; a cópia que estiver num browser é apagada, com a sessão. Antes de
+        apagar, exporte a cópia de segurança: o que estiver só no servidor deixa de ter de onde ser
+        recuperado.
       </p>
       <p>
         Se achar que os seus dados estão a ser tratados indevidamente, pode apresentar queixa à

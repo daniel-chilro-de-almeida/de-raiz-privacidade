@@ -49,7 +49,7 @@
       <header>
         <h1>Privacy policy</h1>
         <p class="lead">De Raiz – build control for people managing their own house.</p>
-        <p class="meta">Last updated: 29 September 2026</p>
+        <p class="meta">Last updated: 6 October 2026</p>
         <a class="lang" href="../privacidade/">Ler em português</a>
       </header>
 
@@ -60,18 +60,28 @@
           Union, where only that obra's members can read it. You decide which of the two happens,
           obra by obra, and the whole app works with no account at all.
         </p>
+        <p>
+          <strong>On a computer</strong>, at
+          <a href="https://app.casaderaiz.pt">app.casaderaiz.pt</a>, it is different, which is why
+          it has a section of its own below: there the account is required, the obra is always in
+          the cloud, and the browser keeps a copy of it until you sign out.
+        </p>
       </div>
 
       <h2>What is collected</h2>
 
       <h3>If you do not create an account: nothing</h3>
       <p>
-        Without an account, the app does not collect, transmit or have access to any information
-        about you. Everything you write stays in the app's private storage, on your device.
+        Without an account – which is only possible on the phone – the app does not collect,
+        transmit or have access to any information about you. Everything you write stays in the
+        app's private storage, on your device.
       </p>
 
       <h3>If you create an account</h3>
-      <p>The account is optional and exists in order to share an obra. Creating one stores:</p>
+      <p>
+        On the phone, the account is optional and exists in order to share an obra; on a computer,
+        it is the way in. Creating one stores:
+      </p>
       <ul>
         <li>
           <strong>the email address</strong> you registered with, to identify the account, confirm
@@ -107,11 +117,15 @@
 
       <h3>What still does not exist</h3>
       <ul>
-        <li>usage analytics, telemetry or usage statistics;</li>
+        <li>
+          usage analytics, telemetry or usage statistics in the app (what the browser may report to
+          Cloudflare on its own is described under <a href="#computer">On a computer</a>);
+        </li>
         <li>automatic crash reporting;</li>
         <li>advertising, ad tracking or advertising identifiers;</li>
         <li>selling, sharing or handing your data to third parties for commercial purposes;</li>
-        <li>tracking your activity across other apps or other websites.</li>
+        <li>tracking your activity across other apps or other websites;</li>
+        <li>cookies – on a computer, the session is kept in the browser's storage.</li>
       </ul>
       <p>
         The app's developer receives no copies, summaries or statistics of what is in your obra, and
@@ -120,7 +134,7 @@
 
       <h2>Where your data lives</h2>
       <p>
-        <strong>On your device</strong>, always: the obra, its phases, the trades, the quotes, the
+        <strong>On your phone</strong>, always: the obra, its phases, the trades, the quotes, the
         payments, the suppliers, the documents and the photos are stored in the app's private
         storage. Files you attach are copied into that same private folder. The app was built to
         work this way – on a building site with no reception, everything keeps working.
@@ -133,6 +147,60 @@
         processor, in the <strong>Central EU – Frankfurt, Germany</strong> region. The data does not
         leave the European Union. Supabase is also what sends the registration and password-reset
         emails.
+      </p>
+      <p>
+        <strong>And, on a computer, in the browser you signed in on</strong>, for as long as you are
+        signed in – the next section explains.
+      </p>
+
+      <h2 id="computer">On a computer</h2>
+      <p>
+        De Raiz also works in a browser, at
+        <a href="https://app.casaderaiz.pt">app.casaderaiz.pt</a>. It is the same app, and the
+        browser is one more device of the obra. Three things differ from the phone:
+      </p>
+      <ul>
+        <li>
+          <strong>The account is required, and the obra is always in the cloud.</strong> The
+          computer only opens shared obras – ones already on the server, or one created there, which
+          is saved to the server as it is created. An obra you keep to yourself, on your phone,
+          never reaches the computer.
+        </li>
+        <li>
+          <strong>The browser keeps a copy of the obra</strong> – the records, the photos'
+          thumbnails, and the documents and photos you opened – in the private storage it gives this
+          site, so the app works without a connection, and keeps the session in its
+          <code>localStorage</code>.
+          <strong>Signing out sends whatever is still to send and deletes both.</strong> Leaving an
+          obra and deleting the account also delete this browser's copy. If the browser needs the
+          space, it may delete the copy on its own; the obra is in the cloud and opens again.
+        </li>
+        <li>
+          <strong>Reminders stay on the phones.</strong> The computer sends no notifications, and
+          the site forbids the browser itself the camera, the microphone and location: files are
+          chosen in the browser's file picker or dragged onto the page. Some browsers ask whether
+          the site may store data persistently – that is the copy of the obra, and saying no only
+          means the browser may delete it if it needs the space.
+        </li>
+      </ul>
+      <p>
+        <strong>The page is served by Cloudflare.</strong>
+        <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">Cloudflare</a> hosts the
+        app's files and delivers them to your browser, acting as processor, under its data
+        processing agreement. To do so it sees the requests your browser makes to it: the IP
+        address, the browser and system (<em>user agent</em>) and the page requested. It is a United
+        States company with servers around the world, and the request is answered by the nearest.
+        The obra's data does not pass through it: it goes from the browser straight to the server in
+        the European Union.
+      </p>
+      <p>
+        <strong>The browser may tell Cloudflare when a page fails to load.</strong> Cloudflare adds
+        a <em>Network Error Logging</em> request to its responses, and browsers that support it send
+        a report to <code>a.nel.cloudflare.com</code> when a load fails – with the address
+        requested, the kind of error and when, and, like any request, the IP address. It is not
+        usage analytics nor anything the app does, and it cannot be switched off on the free service
+        that hosts this page; it is written here because it is a request your browser makes to a
+        third party.
       </p>
 
       <h2>Who can see a shared obra</h2>
@@ -148,9 +216,9 @@
         members' names (that is what the name is for), which of them is the owner, since when each
         has been there and whether any of them is still on an older version of the app, and nothing
         else about them. For that, the app keeps beside each member the number of the version they
-        have installed – the same for everyone who installed that version, and nothing that tells
-        one phone from another. There are no public profiles, no user search, and no way to find out
-        who has an account.
+        have installed – or, on a computer, of the version the browser is running: the same for
+        everyone on that version, and nothing that tells one device from another. There are no
+        public profiles, no user search, and no way to find out who has an account.
       </p>
       <p>
         An invite is a six-character code that works once and expires after seven days. The server
@@ -169,7 +237,8 @@
       <p>
         The app can export a single file containing all of your records and files. That file is
         created on your device and handed to the iOS share sheet: you choose where it goes – Files,
-        iCloud Drive, email, or another service.
+        iCloud Drive, email, or another service. On a computer, the browser downloads it to the
+        downloads folder.
       </p>
       <p>
         Once you send it to a service, that service's own terms and privacy policy apply, and they
@@ -181,6 +250,7 @@
       </p>
 
       <h2>Permissions the app asks for</h2>
+      <p>On the phone, two, and only when they are needed:</p>
       <ul>
         <li>
           <strong>Camera</strong> – only when you choose to take a photo to attach to the obra. The
@@ -211,8 +281,12 @@
       <h2>How long it is kept</h2>
       <ul>
         <li>
-          <strong>On your device</strong>, for as long as you want. Deleting the app deletes that
+          <strong>On your phone</strong>, for as long as you want. Deleting the app deletes that
           data with it, and all that remains is whatever you exported or shared.
+        </li>
+        <li>
+          <strong>In a browser</strong>, until you sign out, leave the obra or delete the account –
+          each of the three deletes that browser's copy of the obra and its session.
         </li>
         <li>
           <strong>The account</strong>, for as long as it exists. Deleting it deletes the email, the
@@ -221,7 +295,8 @@
         <li>
           <strong>A shared obra</strong>, for as long as it has members. When the last member leaves
           it or deletes their account, the obra, its records and its files are deleted from the
-          server. Leaving a shared obra does not delete the copy on your phone.
+          server. Leaving a shared obra deletes it from the phone or browser you leave from as well
+          – the obra carries on for the other members.
         </li>
       </ul>
 
@@ -236,8 +311,8 @@
       <h2>Your rights</h2>
       <p>
         Over the data on your device, the control is entirely yours: you can see it, correct it,
-        export it from the backup screen, and delete it by uninstalling the app. Nobody has to hand
-        it to you, because it never left.
+        export it from the backup screen, and delete it by uninstalling the app – or, on a computer,
+        by signing out. Nobody has to hand it to you, because it never left.
       </p>
       <p>Over the data on the server, you have the right to:</p>
       <ul>
@@ -259,9 +334,9 @@
         are the last member of are deleted, with its records and files; from an obra other people
         are in, you leave, and it stays intact for them. If you run an obra that has other members,
         you choose first whether to hand it to one of them or delete it for everyone – neither
-        happens without your choosing it. The obra saved on your phone is not touched. Export the
-        backup before deleting: whatever is only on the server will have nowhere to be recovered
-        from.
+        happens without your choosing it. The obra saved on your phone is not touched; the copy in a
+        browser is deleted, with the session. Export the backup before deleting: whatever is only on
+        the server will have nowhere to be recovered from.
       </p>
       <p>
         If you believe your data is being handled improperly, you can complain to the Portuguese

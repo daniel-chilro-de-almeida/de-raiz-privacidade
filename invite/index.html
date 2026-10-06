@@ -50,17 +50,23 @@
         <p class="lead">
           Someone building a house with De Raiz has invited you into the same obra.
         </p>
-        <p class="meta">Last updated: 26 September 2026</p>
+        <p class="meta">Last updated: 6 October 2026</p>
         <a class="lang" href="../convite/" data-carry-hash>Ler em português</a>
       </header>
 
       <div class="callout" id="with-code">
         <p class="eyebrow">Invite code</p>
         <p class="invite-code" id="code">–</p>
-        <p><a class="btn btn-primary" id="open" href="deraiz://convite">Open in De Raiz</a></p>
+        <p class="cta-row">
+          <a class="btn btn-primary" id="open" href="deraiz://convite">Open in De Raiz</a>
+          <a class="btn btn-ghost" id="open-web" href="https://app.casaderaiz.pt/convite"
+            >Open on a computer</a
+          >
+        </p>
         <p>
-          The button opens the app, if it is installed on this phone. The invite works once, and
-          expires seven days after it was created.
+          The first button opens the app, if it is installed on this phone. The second opens De Raiz
+          in the browser, at app.casaderaiz.pt, with the code already filled in. The invite works
+          once, and expires seven days after it was created.
         </p>
       </div>
 
@@ -99,22 +105,24 @@
 
       <h2>What this page does with the code</h2>
       <p>
-        Nothing, beyond showing it. The code comes after the <code>#</code> in the address, and a
-        browser never sends that part to any server – not even the one serving this page. There are
-        no visitor analytics and no third-party scripts here. What decides whether the invite is
-        valid is the De Raiz server, when you tap <strong>Join the obra</strong> inside the app.
+        Nothing, beyond showing it and putting it in the two buttons. The code comes after the
+        <code>#</code> in the address, and a browser never sends that part to any server – not the
+        one serving this page, and not the one serving De Raiz on a computer, which reads it the
+        same way and keeps it in the browser until it is used. There are no visitor analytics and no
+        third-party scripts here. What decides whether the invite is valid is the De Raiz server,
+        when you tap <strong>Join the obra</strong> inside the app.
       </p>
 
       <h2>What happens when you accept</h2>
       <p>
-        The whole obra arrives on your phone and keeps working with no signal. What you write
-        reaches the other members, and what they write reaches you. A shared obra is also kept on a
-        server in the European Union that only that obra’s members can read – the
+        The whole obra arrives on your phone – or in the browser – and keeps working with no signal.
+        What you write reaches the other members, and what they write reaches you. A shared obra is
+        also kept on a server in the European Union that only that obra’s members can read – the
         <a href="../privacy/">privacy policy</a> says what that means.
       </p>
       <p>
-        De Raiz keeps one obra per phone. If this phone already has one, the app asks you to export
-        and delete it before joining the other – the exported copy is yours.
+        De Raiz keeps one obra per phone, and one per browser. If this phone already has one, the
+        app asks you to export and delete it before joining the other – the exported copy is yours.
       </p>
     </main>
 
@@ -157,6 +165,11 @@
         }
         document.getElementById('code').textContent = code.slice(0, 3) + ' \u00b7 ' + code.slice(3);
         document.getElementById('open').setAttribute('href', 'deraiz://convite?codigo=' + code);
+        // The computer reads the code the same way, after the #, so it reaches no server there
+        // either (src/core/web/inviteFragment.ts in the app).
+        document
+          .getElementById('open-web')
+          .setAttribute('href', 'https://app.casaderaiz.pt/convite#' + code);
       })();
     </script>
   </body>

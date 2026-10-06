@@ -53,16 +53,22 @@
         <p class="lead">
           Alguém que está a construir uma casa com a De Raiz convidou-o para a mesma obra.
         </p>
-        <p class="meta">Última atualização: 26 de setembro de 2026</p>
+        <p class="meta">Última atualização: 6 de outubro de 2026</p>
         <a class="lang" href="../invite/" data-carry-hash>Read in English</a>
       </header>
 
       <div class="callout" id="with-code">
         <p class="eyebrow">Código do convite</p>
         <p class="invite-code" id="code">–</p>
-        <p><a class="btn btn-primary" id="open" href="deraiz://convite">Abrir na De Raiz</a></p>
+        <p class="cta-row">
+          <a class="btn btn-primary" id="open" href="deraiz://convite">Abrir na De Raiz</a>
+          <a class="btn btn-ghost" id="open-web" href="https://app.casaderaiz.pt/convite"
+            >Abrir no computador</a
+          >
+        </p>
         <p>
-          O botão abre a aplicação, se estiver instalada neste telemóvel. O convite serve uma só
+          O primeiro botão abre a aplicação, se estiver instalada neste telemóvel. O segundo abre a
+          De Raiz no browser, em app.casaderaiz.pt, com o código já escrito. O convite serve uma só
           vez, e expira sete dias depois de ter sido criado.
         </p>
       </div>
@@ -102,22 +108,26 @@
 
       <h2>O que esta página faz com o código</h2>
       <p>
-        Nada, além de o mostrar. O código vem depois do <code>#</code> no endereço, e um navegador
-        nunca envia essa parte a nenhum servidor – nem ao que serve esta página. Não há aqui análise
-        de visitas nem scripts de terceiros. Quem decide se o convite é válido é o servidor da De
-        Raiz, quando tocar em <strong>Entrar na obra</strong>, dentro da aplicação.
+        Nada, além de o mostrar e de o pôr nos dois botões. O código vem depois do
+        <code>#</code> no endereço, e um navegador nunca envia essa parte a nenhum servidor – nem ao
+        que serve esta página, nem ao que serve a De Raiz no computador, que o lê da mesma forma e o
+        guarda no browser até o usar. Não há aqui análise de visitas nem scripts de terceiros. Quem
+        decide se o convite é válido é o servidor da De Raiz, quando tocar em
+        <strong>Entrar na obra</strong>, dentro da aplicação.
       </p>
 
       <h2>O que acontece quando aceita</h2>
       <p>
-        A obra chega inteira ao seu telemóvel e continua a funcionar sem rede. O que escrever chega
-        aos outros membros, e o que eles escreverem chega a si. Uma obra partilhada fica também num
-        servidor na União Europeia que só os membros dessa obra conseguem ler – a
+        A obra chega inteira ao seu telemóvel – ou ao browser – e continua a funcionar sem rede. O
+        que escrever chega aos outros membros, e o que eles escreverem chega a si. Uma obra
+        partilhada fica também num servidor na União Europeia que só os membros dessa obra conseguem
+        ler – a
         <a href="../privacidade/">política de privacidade</a> diz o que isso significa.
       </p>
       <p>
-        A De Raiz guarda uma obra por telemóvel. Se já tiver uma neste, a aplicação pede-lhe que a
-        exporte e a apague antes de entrar na outra – a cópia exportada é sua.
+        A De Raiz guarda uma obra por telemóvel, e uma por browser. Se já tiver uma neste, a
+        aplicação pede-lhe que a exporte e a apague antes de entrar na outra – a cópia exportada é
+        sua.
       </p>
     </main>
 
@@ -160,6 +170,11 @@
         }
         document.getElementById('code').textContent = code.slice(0, 3) + ' \u00b7 ' + code.slice(3);
         document.getElementById('open').setAttribute('href', 'deraiz://convite?codigo=' + code);
+        // The computer reads the code the same way, after the #, so it reaches no server there
+        // either (src/core/web/inviteFragment.ts in the app).
+        document
+          .getElementById('open-web')
+          .setAttribute('href', 'https://app.casaderaiz.pt/convite#' + code);
       })();
     </script>
   </body>
