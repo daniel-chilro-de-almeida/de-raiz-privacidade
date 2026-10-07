@@ -118,6 +118,8 @@ h3 {
 
 .brand {
   display: inline-flex;
+  flex-shrink: 0;
+  white-space: nowrap;
   align-items: center;
   gap: 0.55rem;
   color: var(--text);
@@ -157,6 +159,21 @@ h3 {
 .site-nav .lang {
   border: 1px solid var(--border);
   background: var(--surface);
+}
+
+/* The way into app.casaderaiz.pt, at the right of every landing page's header. */
+.site-nav .signin {
+  margin-left: 0.25rem;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-family: var(--title);
+  white-space: nowrap;
+}
+
+.site-nav .signin:hover {
+  background: var(--accent);
+  color: var(--on-accent);
+  filter: brightness(1.08);
 }
 
 @media (max-width: 34rem) {
@@ -263,6 +280,17 @@ h3 {
   max-width: 34rem;
   color: var(--text-muted);
   font-size: 1.05rem;
+}
+
+.hero .tagline {
+  margin-top: 1.25rem;
+  color: var(--text);
+  font-family: var(--title);
+  font-size: 1.2rem;
+}
+
+.hero .tagline + p {
+  margin-top: 0.5rem;
 }
 
 .cta-row {
@@ -498,6 +526,15 @@ h3 {
   margin: 0 auto;
   max-width: 34rem;
   color: var(--text-muted);
+}
+
+.banner p + p {
+  margin-top: 0.75rem;
+}
+
+.banner .banner-lead {
+  color: var(--text);
+  font-family: var(--title);
 }
 
 .banner .cta-row {
