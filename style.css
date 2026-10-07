@@ -209,6 +209,13 @@ h3 {
   margin-left: auto;
 }
 
+/* The landing pages run at the tiles' 72rem; the header and footer follow them there, and stay at
+   64rem on the policy and support pages, whose text column is that wide. */
+.home .site-header .inner,
+.home .site-footer .inner {
+  max-width: 72rem;
+}
+
 /* ---------- buttons ---------- */
 
 .btn {
@@ -448,7 +455,8 @@ h3 {
 /* ---------- sections ---------- */
 
 .section {
-  max-width: 64rem;
+  /* The tiles' width (.qp), so the disclaimer starts where they do. */
+  max-width: 72rem;
   margin: 0 auto;
   padding: 5rem 1.25rem 0;
   /* the header is sticky, so an anchor jump must clear it */
@@ -1076,7 +1084,9 @@ h3 {
 }
 
 .banner {
-  max-width: 64rem;
+  /* Edge to edge with the tiles above: .qp's 72rem less its 1.25rem gutters. */
+  width: calc(100% - 2.5rem);
+  max-width: 69.5rem;
   margin: 5rem auto 0;
   padding: 2.25rem 1.5rem;
   border: 1px solid var(--border);
